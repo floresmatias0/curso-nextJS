@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import Layout from '../../components/layout';
 import Title from '../../components/title';
 import Link from 'next/link'
@@ -5,6 +6,10 @@ import Link from 'next/link'
 const Posts = ({posts}) => {
   return(
     <Layout>
+    <Head>
+      <title>Landing page posts</title>
+      <meta name="description" content="mi nombre es matias y estoy probando el componente Head que ofrece nextJS"/>
+    </Head>
       <Title>Posts Page</Title>
       <div>
       {posts.map((post,i) => {
