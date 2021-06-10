@@ -1,6 +1,6 @@
 import Head from 'next/head';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
-import Layout from '../../components/layout';
 import Title from '../../components/title';
 
 const User = ({users}) => {
@@ -12,14 +12,22 @@ const User = ({users}) => {
   }
 
   return (
-    <Layout>
+    <>
     <Head>
       <title>User #{users.id}</title>
       <meta name="description" content="mi nombre es matias y estoy probando el componente Head que ofrece nextJS"/>
     </Head>
       <Title>User Details</Title>
-      <div>
+      <div className="card">
         <h2>{users.name}</h2>
+        <div className="imagen">
+        <Image
+          src={`/images/${users.id}.jpg`}
+          alt="perfil"
+          width={400}
+          height={600}
+          objectFit="cover"/>
+        </div>
         <h3>{users.company.name}</h3>
         <ul>
           <li>{users.phone}</li>
@@ -29,17 +37,21 @@ const User = ({users}) => {
       </div>
       <style jsx>
       {`
-        div{
+        .imagen{
+          padding:1em;
+          border:none;
+        }
+        .card{
           width: 20em;
           text-decoration: none;
           border: 1px solid darkgray;
           border-radius: 1em;
           text-align: center;
         }
-        div:hover{
+        .card:hover{
           border: 1px solid darkblue;
         }
-        div ul{
+        .card ul{
           padding: 0;
           text-align: center;
           list-style: none;
@@ -47,7 +59,7 @@ const User = ({users}) => {
 
       `}
       </style>
-    </Layout>
+    </>
   )
 }
 export const getStaticPaths = async () => {

@@ -1,12 +1,11 @@
 import Head from 'next/head';
-import Layout from '../../components/layout';
 import Title from '../../components/title';
 import Link from 'next/link'
 
 const Users = ({users}) => {
 
   return (
-    <Layout>
+    <>
     <Head>
       <title>Landing page users</title>
       <meta name="description" content="mi nombre es matias y estoy probando el componente Head que ofrece nextJS"/>
@@ -56,7 +55,7 @@ const Users = ({users}) => {
           }
         `}
       </style>
-    </Layout>
+    </>
 
   )
 }
