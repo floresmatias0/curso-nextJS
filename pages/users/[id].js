@@ -82,7 +82,7 @@ export const getStaticProps = async({params}) => {
   return {
     props: {
       users
-    }, // will be passed to the page component as props
+    },
   }
 }
 

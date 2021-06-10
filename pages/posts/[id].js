@@ -1,12 +1,7 @@
-// import { useRouter } from 'next/router';
 import Layout from '../../components/layout';
 import Title from '../../components/title';
 
 const Post = ({posts}) => {
-
-  // const router = useRouter();
-  console.log(posts);
-
   return (
     <Layout>
       <Title>Post Details</Title>
@@ -48,7 +43,7 @@ export const getServerSideProps = async({params}) => {
   return {
     props: {
       posts
-    }, // will be passed to the page component as props
+    },
   }
 }
 

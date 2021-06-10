@@ -1,24 +1,8 @@
-// import React from 'react'
 import Layout from '../../components/layout';
 import Title from '../../components/title';
 import Link from 'next/link'
 
 const Users = ({users}) => {
-  // CLIENT SIDE SERVER
-  // const [users,setUsers] = React.useState([]);
-  //
-  // React.useEffect(() => {
-  //   const fecthUsers = async() => {
-  //     return await fetch('https://jsonplaceholder.typicode.com/users')
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       console.log(data)
-  //       setUsers(data)
-  //     })
-  //   }
-  //
-  //   fecthUsers();
-  // },[])
 
   return (
     <Layout>
@@ -78,14 +62,13 @@ export const getServerSideProps = async() => {
   await fetch('https://jsonplaceholder.typicode.com/users')
   .then(res => res.json())
   .then(data => {
-    console.log(data)
     users = data
   })
 
   return {
     props: {
       users
-    }, // will be passed to the page component as props
+    },
   }
 }
 

@@ -12,11 +12,6 @@ const Navbar = () => {
         <Link href="/posts">
           <a>Posts</a>
         </Link>
-        {/*
-          <Link href="/posts/[id]" as={`/posts/${5}`}>
-            <a>Post #5</a>
-          </Link>
-        */}
         <style jsx>
         {`
           nav{

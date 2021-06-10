@@ -1,24 +1,8 @@
-// import React from 'react';
 import Layout from '../../components/layout';
 import Title from '../../components/title';
 import Link from 'next/link'
 
 const Posts = ({posts}) => {
-  // CLIENT SERVER SIDE
-  // const [posts,setPosts] = React.useState([]);
-  //
-  // React.useEffect(() => {
-  //   const fecthPosts = async() => {
-  //     return await fetch('https://jsonplaceholder.typicode.com/posts')
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       console.log(data)
-  //       setPosts(data)
-  //     })
-  //   }
-  //
-  //   fecthPosts();
-  // },[])
   return(
     <Layout>
       <Title>Posts Page</Title>
@@ -75,7 +59,6 @@ export const getServerSideProps = async() => {
   await fetch('https://jsonplaceholder.typicode.com/posts')
   .then(res => res.json())
   .then(data => {
-    console.log(data)
     posts = data
   })
 
